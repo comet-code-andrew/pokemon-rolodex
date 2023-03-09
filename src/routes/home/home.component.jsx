@@ -1,21 +1,15 @@
-import {useEffect, useState} from "react";
-import PokemonSetList from "../../components/pokemon-set-list/pokemon-set-list.component";
+import {Route, Routes} from "react-router-dom";
 
-function Home() {
+import PokemonSet from "../pokemon-set/pokemon-set.component";
+import Pokemon from "../pokemon/pokemon.component";
 
-  const [pokemonSets, setPokemonSets] = useState([]);
-
-  useEffect(() => {
-    fetch('https://api.pokemontcg.io/v2/sets')
-      .then( ( response) => response.json()  )
-      .then( ( pokemon ) => setPokemonSets( pokemon.data ) )
-  }, [])
-
+const Home = () => {
   return (
-    <div className="App">
-      <PokemonSetList props={pokemonSets}/>
-    </div>
-  );
+    <Routes>
+      <Route index element={<PokemonSet/>}/>
+      <Route path=":set" element={<Pokemon/>}/>
+    </Routes>
+  )
 }
 
 export default Home;
