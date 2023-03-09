@@ -1,17 +1,14 @@
 import {useEffect, useState} from "react";
 import PokemonSetList from "../../components/pokemon-set-list/pokemon-set-list.component";
 import axios from "axios";
+import SearchBox from "../../components/search-box/search-box.component";
 
 function PokemonSet() {
 
   const [pokemonSets, setPokemonSets] = useState([]);
+  const [filteredPokemonSets, setFilteredPokemonSets] = useState('')
   const [isLoading, setLoading] = useState(true)
-
-  // useEffect(() => {
-  //   fetch('https://api.pokemontcg.io/v2/sets')
-  //     .then( ( response) => response.json()  )
-  //     .then( ( pokemon ) => setPokemonSets( pokemon.data ) )
-  // }, [])
+  const [searchField, setSearchField] = useState('')
 
   useEffect (() => {
     const getItems = async () => {
@@ -24,10 +21,26 @@ function PokemonSet() {
     getItems()
   },[])
 
+  useEffect(() => {
+    const filteredData = pokemonSets.filter((pokemonSet) => {
+      return pokemonSet.name.toLowerCase().includes(searchField);
+    })
+    setFilteredPokemonSets(filteredData)
+  }, [pokemonSets, searchField])
+
+  const onSearchChange = (event) => {
+    const searchFieldString = event.target.value.toLowerCase();
+    setSearchField(searchFieldString)
+  }
 
   return (
     <div className="App">
-      <PokemonSetList isLoading={isLoading} props={pokemonSets}/>
+      <SearchBox
+        onChangeHandler={onSearchChange}
+        className="monsters-search-box"
+        placeholder="search pokimon"
+      />
+      <PokemonSetList isLoading={isLoading} props={filteredPokemonSets}/>
     </div>
   );
 }
