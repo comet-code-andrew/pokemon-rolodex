@@ -1,11 +1,13 @@
+import PokemonListCard from "../pokemon-list-card/pokemon-list-card.component";
+
 const PokemonList = ( {props} ) => {
   return(
     <div className='card-list'>
       { props.map( ( pokemon ) => {
-        return (<p> {pokemon.name}</p>)
+        return (<PokemonListCard props={pokemon}/>)
       })}
     </div>
   )
 }
 
-export default PokemonList
+export default PokemonList;
