@@ -38,7 +38,7 @@ function PokemonSet() {
       <SearchBox
         onChangeHandler={onSearchChange}
         className="monsters-search-box"
-        placeholder="search pokimon"
+        placeholder="Search pokimon"
       />
       <PokemonSetList isLoading={isLoading} props={filteredPokemonSets}/>
     </div>

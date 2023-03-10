@@ -39,7 +39,7 @@ const Pokemon = () => {
       <SearchBox
         onChangeHandler={onSearchChange}
         className="monsters-search-box"
-        placeholder="search pokimon"
+        placeholder="Search Pokémon"
       />
       <PokemonList isLoading={loading} props={filteredPokemon}/>
     </>
