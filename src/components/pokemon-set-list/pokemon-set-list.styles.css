@@ -5,4 +5,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   text-align: center;
+  font-family: gameboy;
+  font-size: small;
 }

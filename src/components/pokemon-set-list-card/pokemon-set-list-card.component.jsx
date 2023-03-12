@@ -3,12 +3,12 @@ import {Link} from "react-router-dom";
 
 const PokemonSetListCard = ( {props} ) => {
   return(
-    <div className='card-container'>
+    <Link className='card-container rainbow'  to={`set/${props.id}`}>
       <img className="card-container-image" alt={`Pokemon set ${props.name}`} src={`${props.images.logo}`} />
-      <h2>
-        <Link className={'title'} to={`set/${props.id}`}> {props.name} {props.id} </Link>
-      </h2>
-    </div>
+      <p> set: {props.name}</p>
+      <p> printed: {props.printedTotal}</p>
+      <p> released: {props.releaseDate}</p>
+    </Link>
   )
 }
 

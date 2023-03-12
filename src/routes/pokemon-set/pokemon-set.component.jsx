@@ -34,14 +34,17 @@ function PokemonSet() {
   }
 
   return (
-    <div className="App">
+    <>
       <SearchBox
         onChangeHandler={onSearchChange}
         className="monsters-search-box"
         placeholder="Search pokimon"
       />
-      <PokemonSetList isLoading={isLoading} props={filteredPokemonSets}/>
-    </div>
+      <div className="App">
+
+        <PokemonSetList isLoading={isLoading} props={filteredPokemonSets}/>
+      </div>
+    </>
   );
 }
 

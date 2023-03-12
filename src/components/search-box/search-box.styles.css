@@ -1,12 +1,22 @@
+.search {
+    text-align: center;
+}
+
 .search-box {
     -webkit-appearance: none;
-    border: none;
+    border: solid;
     outline: none;
     padding: 10px;
     width: 250px;
     line-height: 30px;
+    margin-top: 50px;
     margin-bottom: 50px;
-    font-family: pokemon-solid;
-    font-size: medium;
+    font-family: gameboy;
+    font-size: small;
+    background: #ffee73;
     border-radius: 5px 5px 5px 5px;
+    caret-shape:underscore;
+    border: 3px ;
+    border-style: solid;
+    border-color: black;
 }
