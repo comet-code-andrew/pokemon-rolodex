@@ -9,7 +9,6 @@ function App() {
       <div className="bg"></div>
       <div className="bg bg2"></div>
       <div className="bg bg3"></div>
-
       <div className="app-header">
         <h1 className="app-title">Pokédex</h1>
         <p className="app-description">On the desk there is my
